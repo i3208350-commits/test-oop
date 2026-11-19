@@ -1,4 +1,5 @@
 import random
+from round_Management import RoundManagement 
 
 
 
@@ -24,27 +25,25 @@ for i in wordes:
              wordes_player.append(i)
         
 
-print(wordes)
+
 
 print(wordes_player)
 def mnue():
-        print("--------Welcome to the card game--------")
-        print("• 1. Play turn")
-        print("• 2. Exit")
-        choice=input("Enter your choice")
-        # if choice=="1":
-                
+        while True:
+            print("--------Welcome to the card game--------")
+            print("• 1. Play turn")
+            print("• 2. Exit")
+            choice=input("Enter your choice")
+            if choice=="1":
+                    r=RoundManagement()
+                    r.drawing_cards(wordes_player,wordes_computer)
+                    r.shape_Conversion()
+                    r.victory_check(victory_player,victory_computer,draw_player,draw_computer,wordes_player,wordes_computer)
+            if choice=="2":
+                print("-----We’re sorry to see you go—goodbye!-----")
+                break
+                                    
     
-    
-
-
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     mnue()
