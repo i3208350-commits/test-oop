@@ -1,5 +1,6 @@
-import random
+from game import Card
 from round_Management import RoundManagement 
+
 
 
 
@@ -28,11 +29,13 @@ for i in wordes:
 print(wordes_player)
 def mnue():
         while True:
+            
             print("--------Welcome to the card game--------")
             print("• 1. Play turn")
             print("• 2. Exit")
             choice=input("Enter your choice")
             if choice=="1":
+                    d=Card(wordes)
                     r=RoundManagement()
                     r.drawing_cards(wordes_player,wordes_computer)
                     r.shape_Conversion()
