@@ -16,7 +16,8 @@ As=14
 
 class RoundManagement:
     def __init__(self,wordes):
-       
+        # self.victory_player=victory_player
+        # self.victory_computer=victory_computer
         self.player=0
         self.computer=0
         print("examination")
@@ -25,7 +26,11 @@ class RoundManagement:
         self.computer=random.choice(self.wordes)
     def drawing_cards(self):
         
-       
+        # self.player=self.player
+        # wordes_player.pop(0)
+        
+        # self.computer=self.c2
+        # wordes_computer.pop(0)
         print(f"The player's card is:___{self.player}")
         print(f"The computer's card is:___{ self.computer}")
     def shape_Conversion(self):
@@ -46,37 +51,37 @@ class RoundManagement:
         if self.computer[1]=="A":
                      self.computer[1]=14
         
-    # def conversion_returned(self):
-    #             if self.player[1]==11:
-    #                 self.player[1]=="J"
-    #             if self.player[1]==12:
-    #                 self.player[1]=="Q"
-    #             if self.player[1]==13:
-    #                 self.player[1]=="K"
-    #             if self.player[1]==14:
-    #                  self.player[1]=="A"
-    #             if self.computer[1]==11:
-    #                         self.computer[1]="J"
-    #             if self.computer[1]==12:
-    #                         self.computer[1]=="Q"
-    #             if self.computer[1]==13:
-    #                         self.computer[1]=="K"
-    #             if self.computer[1]==14:
-    #                          self.computer[1]=="A"
+    def conversion_returned(self):
+                if self.player[1]==11:
+                    self.player[1]=="J"
+                if self.player[1]==12:
+                    self.player[1]=="Q"
+                if self.player[1]==13:
+                    self.player[1]=="K"
+                if self.player[1]==14:
+                     self.player[1]=="A"
+                if self.computer[1]==11:
+                            self.computer[1]="J"
+                if self.computer[1]==12:
+                            self.computer[1]=="Q"
+                if self.computer[1]==13:
+                            self.computer[1]=="K"
+                if self.computer[1]==14:
+                             self.computer[1]=="A"
     def victory_check(self,victory_player,victory_computer,draw_player,draw_computer,wordes_player,wordes_computer):
         
         
         if self.player[1]>self.computer[1]:
             victory_player+=1
             victory_computer-=1
-            # self.conversion_returned()
+            self.conversion_returned()
             wordes_player.append(self.computer)
             wordes_player.append(self.player)
             Printi.Victory_Print(self,victory_player,victory_computer)
         if self.computer[1]>self.player[1]:
            victory_computer+=1
            victory_player-=1
-        #    self.conversion_returned()
+           self.conversion_returned()
            wordes_computer.append(self.player)
            wordes_computer.append(self.computer)
            
@@ -86,7 +91,7 @@ class RoundManagement:
         if self.computer==self.player:
             draw_player+=1
             draw_computer+=1
-            self.conversion_returned()
+            self.conversion_returned(self)
             Printi.draw(victory_player,victory_computer)
        
 
