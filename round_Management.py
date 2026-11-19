@@ -1,9 +1,9 @@
 
 
 wordes_player=[["H",7],["H",3]]
-wordes_computer=[["C","J"],["C","Q"]]
-victory_player=0
-victory_computer=0
+wordes_computer=[["C",7],["C","Q"]]
+victory_player=26
+victory_computer=26
 draw_player=0
 draw_computer=0
 
@@ -12,6 +12,8 @@ draw_computer=0
 
 class RoundManagement:
     def __init__(self):
+        # self.victory_player=victory_player
+        # self.victory_computer=victory_computer
         self.player=0
         self.computer=0
         print("examination")
@@ -50,26 +52,50 @@ class RoundManagement:
         
         if self.player[1]>self.computer[1]:
             victory_player+=1
+            victory_computer-=1
             wordes_player.append(self.computer)
             wordes_player.append(self.player)
-
-            
-
-
+            self.Victory_Print(victory_player,victory_computer)
         if self.computer[1]>self.player[1]:
            victory_computer+=1
+           victory_player-=1
            wordes_computer.append(self.player)
            wordes_computer.append(self.computer)
+           
+           self.loss_Print(victory_player,victory_computer)
+           
 
         if self.computer==self.player:
             draw_player+=1
             draw_computer+=1
-        print(victory_player)
-        print(victory_computer)
-        print(wordes_player)
-        print(wordes_computer)
-    # def package_Status():
-    #     print(f"Number of cards in the packs: {}")
+            self.draw(victory_player,victory_computer)
+       
+
+    def Victory_Print(self,victory_player,victory_computer):
+        print("========== TURN ==========")
+        print(f"Player: {self.player}")
+        print(f"Computer: {self.computer}")
+        print("Player won the round!")
+        print(f"Player cards:{victory_player}")
+        print(f"Computer cards: {victory_computer}")
+
+    def loss_Print(self,victory_player,victory_computer):
+        print("========== LOSS ==========")
+        print(f"Player: {self.player}")
+        print(f"Computer: {self.computer}")
+        print("Unfortunately, you lost!")
+        print(f"Player cards:{victory_player}")
+        print(f"Computer cards{victory_computer}")
+
+    def draw(self,victory_player,victory_computer):
+        print("========== DRAW ==========")
+        print(f"Player: {self.player}")
+        print(f"Computer: {self.computer}")
+        print("Unfortunately, you lost!")
+        print(f"Player cards:{victory_player}")
+        print(f"Computer cards{victory_computer}")
+
+   
 
 
 
