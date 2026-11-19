@@ -1,7 +1,8 @@
 from printi import Printi
 # from game import Card
-wordes_player=[["H",7],["H",3]]
-wordes_computer=[["C",4],["C","Q"]]
+import random
+wordes_player=[]
+wordes_computer=[]
 victory_player=26
 victory_computer=26
 draw_player=0
@@ -14,23 +15,19 @@ As=14
 
 
 class RoundManagement:
-    def __init__(self):
-        # self.victory_player=victory_player
-        # self.victory_computer=victory_computer
+    def __init__(self,wordes):
+       
         self.player=0
         self.computer=0
         print("examination")
+        self.wordes=wordes
+        self.player=random.choice(self.wordes)
+        self.computer=random.choice(self.wordes)
+    def drawing_cards(self):
         
        
-    def drawing_cards(self,wordes_player,wordes_computer):
-       
-        self.player=wordes_player[0]
-        wordes_player.pop(0)
-        
-        self.computer=wordes_computer[0]
-        wordes_computer.pop(0)
         print(f"The player's card is:___{self.player}")
-        print(f"The computer's card is:___{self.computer}")
+        print(f"The computer's card is:___{ self.computer}")
     def shape_Conversion(self):
         if self.player[1]=="J":
             self.player[1]=11

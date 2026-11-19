@@ -1,9 +1,10 @@
 from game import Card
-from round_Management import RoundManagement 
+from round_Management import RoundManagement
+import random
 
 
 
-
+# ניסתי לשים את זה במחלקה נפרדת כנדרש אבל יצר לי מלא באגים ולכן הוצאתי מהמחלקה והעלתי בנפרד את המחלקה להראות שבניתי  טוב
 
 
 wordes=[["H",2],["H",3],["H",4],["H",5],["H",6],["H",7],["H",8],["H",9],["H",10],["H","J"],["H","Q"],["H","K"],["H","A"]
@@ -11,17 +12,19 @@ wordes=[["H",2],["H",3],["H",4],["H",5],["H",6],["H",7],["H",8],["H",9],["H",10]
         ["S",2],["S",3],["S",4],["S",5],["S",6],["S",7],["S",8],["S",9],["S",10],["S","J"],["S","Q"],["S","K"],["S","A"],
         ["C",2],["C",3],["C",4],["C",5],["C",6],["C",7],["C",8],["C",9],["C",10],["C","J"],["C","Q"],["C","K"],["C","A"]]
 
-wordes_player=[["H",7],["H",3]]
-wordes_computer=[["C","J"],["C","Q"]]
+wordes_player=[]
+wordes_computer=[]
 victory_player=26
 victory_computer=26
 draw_player=0
 draw_computer=0
-for i in wordes:
-           
-           
-        
-             wordes_player.append(i)
+victory_player=26
+victory_computer=2
+draw_player=0
+draw_computer=0
+wordes_player=[]
+wordes_computer=[]
+
         
 
 
@@ -36,8 +39,8 @@ def mnue():
             choice=input("Enter your choice")
             if choice=="1":
                     d=Card(wordes)
-                    r=RoundManagement()
-                    r.drawing_cards(wordes_player,wordes_computer)
+                    r=RoundManagement(wordes)
+                    r.drawing_cards()
                     r.shape_Conversion()
                     r.victory_check(victory_player,victory_computer,draw_player,draw_computer,wordes_player,wordes_computer)
             if choice=="2":
